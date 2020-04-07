@@ -1,0 +1,21 @@
+version: '2'
+services:
+  pc1:
+    image: 'robertod91/bobuntu:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      dsp_net1: {}
+    environment:
+      - TEST1=PIPPOZZO1
+  pc2:
+    image: 'robertod91/bobuntu:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      dsp_net1: {}
+networks:
+  dsp_net1:
+    ipam:
+      config:
+        - subnet: 193.20.1.1/24
