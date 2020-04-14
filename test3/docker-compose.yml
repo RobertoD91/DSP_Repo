@@ -1,0 +1,23 @@
+version: '2'
+services:
+  server_VPN:
+    image: 'robertod91/bobuntu:latest'
+    stdin_open: true
+    tty: true
+  element_1:
+    image: 'hwdsl2/ipsec-vpn-server:latest'
+    stdin_open: true
+    tty: true
+  element_2:
+    image: 'hwdsl2/ipsec-vpn-server:latest'
+    stdin_open: true
+    tty: true
+networks:
+  LAN AWS:
+    ipam:
+      config:
+        - subnet: 193.20.1.1/24
+  internet:
+    ipam:
+      config:
+        - subnet: 193.20.2.1/24
