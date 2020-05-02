@@ -1,0 +1,17 @@
+version: '2'
+services:
+  element_0:
+    image: 'robertod91/gaia1:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0: {}
+  element_1:
+    image: 'robertod91/bobuntu:latest'
+    stdin_open: true
+    tty: true
+networks:
+  network_0:
+    ipam:
+      config:
+        - subnet: 193.20.1.1/24
